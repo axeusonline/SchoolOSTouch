@@ -1,0 +1,667 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+
+@mixin schoolostouch {
+  	.v-touchkit-navbar{
+		background:rgb(60,141,188);
+	}
+	.v-touchkit-navbar-caption{
+		 font-family: "blendaScript";
+		 font-weight:bold;
+	     font-style: normal;
+		 src: blendaScriptFontWoff format('woff'), blendaScriptFont format('truetype');
+	 	 color: white;
+	}
+	.v-touchkit-navbar-caption:after {
+	 	font-family: "blendaScript";
+		font-weight:bold;
+	    font-style: normal;
+		src: blendaScriptFontWoff format('woff'), blendaScriptFont format('truetype');
+		content: 'Touch';
+		color: rgb(69,47,0);
+	}	
+	.v-window-closebox,  .v-window-maximizebox, .v-window-restorebox{
+	  	background-color: white;
+	}
+	.v-window-closebox:before {
+	  	content: "\00d7";
+	  	font-size: 20px;
+	}
+	.v-window-maximizebox:before {
+	  	content: "+";
+	  	font-size: 20px;
+	}
+	.blue-button{
+		color: white;
+		font-weight:bold;
+		background: rgb(0,144,202);
+	}
+	.v-touchkit-navbar .v-button {
+		color:rgb(255,255,255);
+		font-size:24px;
+	}
+	.v-touchkit-navbutton:after{
+		color:rgb(255,255,255);
+		font-size:24px;
+	}
+	
+	v-touchkit-navbar-left .v-touchkit-verticalcomponentgroup {
+		background-color:rgb(245,245,242);
+	}
+	.v-touchkit-componentgroup-cell .v-button{
+		color:rgb(94,93,119);
+	}
+	.v-button-search-button{
+		background-color:rgb(245,245,242);
+		height: 35px;
+	}
+	/*.v-touchkit-componentgroup-cell{
+		background-color: rgb(245,245,242);
+		border-radius: 10px;
+	}*/
+	input.v-textfield-prompt, 
+	textarea.v-textarea-prompt, 
+	.v-touchkit-verticalcomponentgroup input:read-only,
+	.v-select-select,
+	.v-touchkit-componentgroup-cell>.v-select-optiongroup,
+	.v-touchkit-verticalcomponentgroup .v-textarea,.v-touchkit-verticalcomponentgroup .v-textfield{
+	    color: #5e5d77;
+	    background-color: rgb(245,245,242);
+	    font-style: normal;
+	    border-radius: 5px;
+	    padding-left: 10px;
+	}
+	.v-touchkit-componentgroup-cell>.v-select-optiongroup .v-select-option>label{
+		color: #5e5d77;
+	}
+	
+  	// Insert your own theme rules here
+	//**********************************
+	// LOGIN PAGE
+	//**********************************
+	.login{
+		background-color:rgb(0,144,202);
+		.login-box{
+			background-color: #ffffff;
+			.title{
+				font-weight:bold;
+				text-align:center;
+			}
+			.local-button, .forgetpass-button, .newuser-button{
+				font-weight:bold;
+				box-shadow: 0 0px rgba(0, 0, 0, 0.1);
+				background-color:#5e5d77;
+				color:rgb(245,245,242);
+			}
+		}
+	}
+	/* Smallest size */
+	.login[width-range~="0px-320px"] {
+		.login-box{
+			width:90%;
+			height:85%;
+			img{
+				width:170px;
+				height:139px;
+			}
+			.login-text{
+				.textfield{
+				  	font-weight: 500;
+  					font-size: 16px;
+  					height: 35px;
+				}				
+				.blue-button{
+					font-size:18px;
+					height:40px;
+				}
+				.local-button, .forgetpass-button, .newuser-button{
+					font-size:14px;
+					height:30px;
+				}
+			}
+		}
+	}
+	/* Small size */
+	.login[width-range~="321px-600px"] {
+		.login-box{
+			width:90%;
+			height:70%;
+			img{
+				width:250px;
+				height:205px;
+			}	
+			.login-text{
+				.textfield{
+				  	font-weight: 500;
+  					font-size: 18px;
+  					height: 40px;
+				}				
+				.blue-button{
+					font-size:26px;
+					height:60px;
+				}
+				.local-button, .forgetpass-button, .newuser-button{
+					font-size:18px;
+					height:35px;
+				}
+			}
+			
+		}
+	}
+	/* Medium size */
+	.login[width-range~="601px-800px"] {
+		.login-box{
+			width:500px;
+			height:570px;
+			img{
+				width:250px;
+				height:205px;
+			}	
+			.login-text{
+				.textfield{
+				  	font-weight: 500;
+  					font-size: 28px;
+  					height: 40px;
+				}				
+				.blue-button{
+					font-size:30px;
+					height:70px;
+				}
+				.local-button, .forgetpass-button, .newuser-button{
+					font-size:24px;
+					height:50px;
+				}
+			}
+		}
+	}	
+	/* Anything bigger */
+	.login[width-range~="801px-"] {
+		.login-box{
+			width:500px;
+			height:520px;
+			img{
+				width:250px;
+				height:205px;
+			}	
+			.login-text{
+				.textfield{
+				  	font-weight: 500;
+  					font-size: 18px;
+  					height: 40px;
+				}
+			}
+			.local-button, .forgetpass-button, .newuser-button{
+				font-size:24px;
+				height:50px;
+			}
+		}
+	}	
+	
+	// Insert your own theme rules here
+	//**********************************
+	// main-layout PAGE
+	//**********************************
+	.name{
+		font-size: 16px;
+		font-weight:bold;
+	}
+	.menu-button{
+		text-align:left;
+	}
+	
+	.main-layout{
+		.name-profile{
+			font-weight:bold;
+			text-align:center;
+		}
+		.email-profile{
+			text-align:center;
+		}
+		.toolbar-button-focus{
+			background-color:rgb(60,141,188);
+			color:rgb(253,253,249);
+		}	
+		.edit-button, .submenu-button{
+			color:rgb(86,86,82);
+			font-weight:bold;
+		}
+		.submenu-button-focus{
+			color: rgb(60,141,188);
+			font-weight:bold;
+		}
+	}
+	/* Smallest size */
+	.main-layout[width-range~="0px-320px"] {
+		.toolbar-button{
+			width:100%;
+		}
+		img{
+			width:80px;
+			height:80px;
+		}
+		.name-profile{
+			font-size: 18px;
+		}
+		.classroom-detail{
+			font-size: 16px;
+		}
+		.email-profile{
+			font-size: 14px;
+		}
+		.edit-button, .submenu-button, .submenu-button-focus{
+			font-size: 18px;
+		}
+	}
+	/* Small size */
+	.main-layout[width-range~="321px-600px"] {
+		.toolbar-button{
+			font-size: 18px;
+		}
+		img{
+			width:100px;
+			height:100px;
+		}
+		.name-profile{
+			font-size: 20px;
+		}
+		.classroom-detail{
+			font-size: 20px;
+		}
+		.email-profile{
+			font-size: 16px;
+		}
+		.edit-button, .submenu-button, .submenu-button-focus{
+			font-size: 20px;
+		}
+	}
+	/* Medium size */
+	.main-layout[width-range~="601px-800px"] {
+		.toolbar-button{
+			font-size: 20px;
+		}
+		img{
+			width:130px;
+			height:130px;
+		}
+		.name-profile{
+			font-size: 28px;
+		}
+		.classroom-detail{
+			font-size: 34px;
+		}
+		.email-profile{
+			font-size: 18px;
+		}
+		.edit-button, .submenu-button, .submenu-button-focus{
+			font-size: 24px;
+		}
+	}	
+	/* Anything bigger */
+	.main-layout[width-range~="801px-"] {
+		.toolbar-button{
+			font-size: 22px;
+		}
+		img{
+			width:150px;
+			height:150px;
+		}
+		.name-profile{
+			font-size: 24px;
+		}
+		.classroom-detail{
+			font-size: 30px;
+		}
+		.email-profile{
+			font-size: 18px;
+		}
+		.edit-button, .submenu-button, .submenu-button-focus{
+			font-size: 22px;
+		}
+	}	
+	// Insert your own theme rules here
+	//**********************************
+	// Search Layout PAGE
+	//**********************************
+	.search-layout{
+		.submenu-button-focus{
+			color: rgb(60,141,188);
+			font-weight:bold;
+		}
+	}
+	/* Smallest size */
+	.search-layout[width-range~="0px-320px"] {
+		.submenu-button, .submenu-button-focus{
+			font-size: 18px;
+		}
+	}
+	/* Small size */
+	.search-layout[width-range~="321px-600px"] {
+		.submenu-button, .submenu-button-focus{
+			font-size: 20px;
+		}
+	}
+	/* Medium size */
+	.search-layout[width-range~="601px-800px"] {
+		.submenu-button, .submenu-button-focus{
+			font-size: 24px;
+		}
+	}	
+	/* Anything bigger */
+	.search-layout[width-range~="801px-"] {
+		.submenu-button, .submenu-button-focus{
+			font-size: 22px;
+		}
+	}	
+	
+	// Insert your own theme rules here
+	//**********************************
+	// Student List PAGE
+	//**********************************
+	.student-list{
+		.student-detail{
+			text-align:left;
+		}
+		.forward{
+			color:rgb(60,141,188);
+		}
+	}
+	/* Smallest size */
+	.student-list[width-range~="0px-320px"] {
+		img{
+			width:40px;
+			height:40px;
+		}
+		.student-detail{
+			font-size:14px;
+		}
+		.forward{
+			font-size:24px;
+		}
+	}
+	/* Small size */
+	.student-list[width-range~="321px-600px"] {
+		img{
+			width:50px;
+			height:50px;
+		}
+		.student-detail{
+			font-size:18px;
+		}
+		.forward{
+			font-size:18px;
+		}
+	}
+	/* Medium size */
+	.student-list[width-range~="601px-800px"] {
+		img{
+			width:70px;
+			height:70px;
+		}
+		.student-detail{
+			font-size:22px;
+		}
+		.forward{
+			font-size:30px;
+		}
+	}	
+	/* Anything bigger */
+	.student-list[width-range~="800px-"] {
+		img{
+			width:80px;
+			height:80px;
+		}
+		.student-detail{
+			font-size:24px;
+		}
+		.forward{
+			font-size:32px;
+		}
+	}	
+	// Insert your own theme rules here
+	//**********************************
+	// Class List PAGE
+	//**********************************
+	.class-list{
+		.forward{
+			color:rgb(60,141,188);
+		}
+		.class-detail{
+			text-align:left;
+		}
+	}
+	/* Smallest size */
+	.class-list[width-range~="0px-320px"] {
+		img{
+			width:50px;
+			height:50px;
+		}
+		.class-detail{
+			font-size:14px;
+		}
+		.forward{
+			font-size:16px;
+		}
+	}
+	/* Small size */
+	.class-list[width-range~="321px-600px"] {
+		img{
+			width:70px;
+			height:70px;
+		}
+		.class-detail{
+			font-size:18px;
+		}
+		.forward{
+			font-size:18px;
+		}
+	}
+	/* Medium size */
+	.class-list[width-range~="601px-800px"] {
+		img{
+			width:100px;
+			height:100px;
+		}
+		.class-detail{
+			font-size:24px;
+		}
+		.forward{
+			font-size:30px;
+		}
+	}	
+	/* Anything bigger */
+	.class-list[width-range~="800px-"] {
+		img{
+			width:110;
+			height:110px;
+		}
+		.class-detail{
+			font-size:26px;
+		}
+		.forward{
+			font-size:32px;
+		}
+	}	
+	
+
+
+
+	// Insert your own theme rules here
+	//**********************************
+	// Student List PAGE
+	//**********************************
+	.attendance-list{
+		.student-detail{
+			text-align:left;
+		}
+		.forward{
+			color:rgb(60,141,188);
+		}
+	}
+	/* Smallest size */
+	.attendance-list[width-range~="0px-320px"] {
+		img{
+			width:40px;
+			height:40px;
+		}
+		.student-detail{
+			font-size:14px;
+		}
+		.forward{
+			font-size:24px;
+		}
+	}
+	/* Small size */
+	.attendance-list[width-range~="321px-600px"] {
+		img{
+			width:50px;
+			height:50px;
+		}
+		.student-detail{
+			font-size:18px;
+		}
+		.forward{
+			font-size:18px;
+		}
+	}
+	/* Medium size */
+	.attendance-list[width-range~="601px-800px"] {
+		img{
+			width:70px;
+			height:70px;
+		}
+		.student-detail{
+			font-size:22px;
+		}
+		.forward{
+			font-size:30px;
+		}
+	}	
+	/* Anything bigger */
+	.attendance-list[width-range~="800px-"] {
+		img{
+			width:80px;
+			height:80px;
+		}
+		.student-detail{
+			font-size:24px;
+		}
+		.forward{
+			font-size:32px;
+		}
+	}
+	// Insert your own theme rules here
+	//**********************************
+	// Student List PAGE
+	//**********************************
+	.user-info{
+		.student-detail{
+			text-align:left;
+		}
+		.forward{
+			color:rgb(60,141,188);
+		}
+	}
+	/* Smallest size */
+	.user-info[width-range~="0px-320px"] {
+		img{
+			width:40px;
+			height:40px;
+		}
+		.student-detail{
+			font-size:14px;
+		}
+		.forward{
+			font-size:24px;
+		}
+	}
+	/* Small size */
+	.user-info[width-range~="321px-600px"] {
+		img{
+			width:50px;
+			height:50px;
+		}
+		.student-detail{
+			font-size:18px;
+		}
+		.forward{
+			font-size:18px;
+		}
+	}
+	/* Medium size */
+	.user-info[width-range~="601px-800px"] {
+		img{
+			width:70px;
+			height:70px;
+		}
+		.student-detail{
+			font-size:22px;
+		}
+		.forward{
+			font-size:30px;
+		}
+	}	
+	/* Anything bigger */
+	.user-info[width-range~="800px-"] {
+		img{
+			width:80px;
+			height:80px;
+		}
+		.student-detail{
+			font-size:24px;
+		}
+		.forward{
+			font-size:32px;
+		}
+	}	
+	// Insert your own theme rules here
+	//**********************************
+	// Template PAGE
+	//**********************************
+	.template{
+		
+	}
+	/* Smallest size */
+	.template[width-range~="0px-320px"] {
+		
+	}
+	/* Small size */
+	.template[width-range~="321px-600px"] {
+		
+	}
+	/* Medium size */
+	.template[width-range~="601px-800px"] {
+		
+	}	
+	/* Anything bigger */
+	.template[width-range~="800px-"] {
+		
+	}	
+}
